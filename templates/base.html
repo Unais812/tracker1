@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title if title else "Flask App" }}</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url("{{ url_for('static', filename='background.jpg') }}") no-repeat center center fixed;
+      background-size: cover;
+    }
+    
+
+    .container {
+      background: rgba(155, 48, 255, 0.2);
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      text-align: center;
+      max-width: 700px;
+    }
+
+    .content {
+      color: #f0e6ff;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      white-space: pre-line; /* preserves line breaks */
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 0.3rem;
+      padding: 0.7rem 1.2rem;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      {% block content %}{% endblock %}
+    </div>
+    <div class="buttons">
+      {% block buttons %}{% endblock %}
+    </div>
+  </div>
+</body>
+</html>

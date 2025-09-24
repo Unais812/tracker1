@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% for p in paragraphs %}
+    <p>{{ p }}</p>
+  {% endfor %}
+{% endblock %}
+
+{% block buttons %}
+  <button class="btn" onclick="location.href='/'">Back Home</button>
+{% endblock %}
+
